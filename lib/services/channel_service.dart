@@ -31,7 +31,6 @@ class ChannelService {
   /// Fetch all channels involving [userId]
   static Future<List<ChannelModel>> getUserChannels(int userId) async {
     final uri = Uri.parse('$_baseUrl/channels?user_id=$userId');
-    print(uri);
     final res = await http.get(uri);
     if (res.statusCode == 200) {
       final List data = jsonDecode(res.body) as List;

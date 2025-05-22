@@ -18,11 +18,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void _login() async {
     try {
-      print("4");
       final user = await authService.login(usernameController.text, passwordController.text);
-      print("5");
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Welcome ${user?.email}!')));
-      print("6");
       if (user != null) {
         Navigator.pushReplacement(
           context,

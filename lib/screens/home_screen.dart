@@ -9,7 +9,7 @@ import 'medical_history.dart';
 
 class HomeScreen extends StatelessWidget {
   final User user;
-  const HomeScreen({Key? key, required this.user}) : super(key: key);
+  const HomeScreen({super.key, required this.user});
 
   @override
   Widget build(BuildContext context) {

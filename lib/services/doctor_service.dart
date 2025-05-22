@@ -19,7 +19,6 @@ class DoctorService {
     );
 
     final List data = jsonDecode(res.body);
-    print(data.map((doctorJson) => DoctorModel.fromJson(doctorJson)).toList());
     return data.map((doctorJson) => DoctorModel.fromJson(doctorJson)).toList();
   }
 }
