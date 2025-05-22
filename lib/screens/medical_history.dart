@@ -6,7 +6,7 @@ import '../services/medical_history_service.dart';
 class MedicalHistoryScreen extends StatefulWidget {
   final User user;
 
-  const MedicalHistoryScreen({Key? key, required this.user}) : super(key: key);
+  const MedicalHistoryScreen({super.key, required this.user});
 
   @override
   State<MedicalHistoryScreen> createState() => _MedicalHistoryScreenState();

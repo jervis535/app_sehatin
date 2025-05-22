@@ -6,7 +6,7 @@ import 'chat_screen.dart';
 
 class ChannelsScreen extends StatefulWidget {
   final User user;
-  const ChannelsScreen({Key? key, required this.user}) : super(key: key);
+  const ChannelsScreen({super.key, required this.user});
 
   @override
   State<ChannelsScreen> createState() => _ChannelsScreenState();

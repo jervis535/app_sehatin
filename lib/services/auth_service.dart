@@ -10,19 +10,16 @@ class AuthService {
   final String _baseUrl = DotenvConfig.baseUrl;
 
   Future<User?> login(String username, String password) async {
-    print(username);
     final response = await http.post(
       Uri.parse('$_baseUrl/users/login'),
       headers: {'Content-Type': 'application/json'},
       body: jsonEncode({'email': username, 'password': password}),
     );
-    print("1");
 
     if (response.statusCode == 200) {
       final data = jsonDecode(response.body);
       return User.fromJson(data['user']);
     } else {
-      print("3");
       throw Exception('Login failed: ${response.body}');
     }
     

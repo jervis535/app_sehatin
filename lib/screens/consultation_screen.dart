@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import '../models/user.dart';
-import '../../models/doctor_model.dart';
 import '../../services/doctor_service.dart';
 import '../../services/channel_service.dart';
 import 'chat_screen.dart';
 
 class ConsultationScreen extends StatefulWidget {
   final User user;
-  const ConsultationScreen({Key? key, required this.user}) : super(key: key);
+  const ConsultationScreen({super.key, required this.user});
 
   @override
   State<ConsultationScreen> createState() => _ConsultationScreenState();
@@ -42,11 +41,8 @@ class _ConsultationScreenState extends State<ConsultationScreen> {
   }
 
   Future<void> _findAndChat() async {
-    print(1);
     if (_selectedSpec == null) return;
-    print(2);
     setState(() => _loading = true);
-    print(3);
 
     try {
       final doctors = await DoctorService.getBySpecialization(_selectedSpec!);
